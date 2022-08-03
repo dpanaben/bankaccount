@@ -22,10 +22,17 @@ namespace learningcsharp
 
         private List<Transaction> allTransactions = new List<Transaction>();
 
-        public BankAccount(string name, decimal initialBalance)
+        private readonly decimal _minimumBalance;
+        public BankAccount(string name, decimal initialBalance) : this(name, initialBalance, 0) { }
+        public BankAccount(string name, decimal initialBalance, decimal minimumBalance)
         {
             this.Owner = name;
-            MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
+            _minimumBalance = minimumBalance;
+            if (initialBalance > 0)
+            {
+                MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
+            }
+            
 
             //this.Balance = initialBalance;
             this.Number = accountNumberSeed.ToString();
@@ -34,7 +41,7 @@ namespace learningcsharp
 
         public void MakeDeposit(decimal amount, DateTime date, string note)
         {
-            if (amount <= 0)
+            if (amount <= _minimumBalance)
             {
                 throw new ArgumentOutOfRangeException(nameof(amount), "Amount of deposit must be positive");
             }
@@ -47,12 +54,22 @@ namespace learningcsharp
             {
                 throw new ArgumentOutOfRangeException(nameof(amount), "Amount of withdrawal must be positive");
             }
-            if (Balance - amount < 0)
+            Transaction? overdraftTransaction = CheckWithdrawalLimit(Balance - amount < _minimumBalance);
+            Transaction? withdrawal = new Transaction(-amount, date, note);
+            allTransactions.Add(withdrawal);
+            if (overdraftTransaction != null)
+                allTransactions.Add(overdraftTransaction);
+        }
+        protected virtual Transaction? CheckWithdrawalLimit(bool isOverdrawn)
+        {
+            if (isOverdrawn)
             {
                 throw new InvalidOperationException("Not sufficient funds for this withdrawal");
             }
-            var withdrawal = new Transaction(-amount, date, note);
-            allTransactions.Add(withdrawal);
+            else
+            {
+                return default;
+            }
         }
 
         public string GetAccountHistory()
@@ -67,6 +84,11 @@ namespace learningcsharp
                 report.AppendLine($"{item.Date.ToShortDateString()}\t{item.Amount}\t{balance}\t{item.Notes}");
             }
             return report.ToString();
+        }
+
+        public virtual void PerformMonthEndTransactions()
+        {
+
         }
     }
 }
