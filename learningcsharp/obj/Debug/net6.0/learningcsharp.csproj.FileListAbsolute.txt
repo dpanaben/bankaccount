@@ -1,0 +1,15 @@
+/Users/dpanaben/vsprojects/learningcsharp/learningcsharp/bin/Debug/net6.0/learningcsharp
+/Users/dpanaben/vsprojects/learningcsharp/learningcsharp/bin/Debug/net6.0/learningcsharp.deps.json
+/Users/dpanaben/vsprojects/learningcsharp/learningcsharp/bin/Debug/net6.0/learningcsharp.runtimeconfig.json
+/Users/dpanaben/vsprojects/learningcsharp/learningcsharp/bin/Debug/net6.0/learningcsharp.dll
+/Users/dpanaben/vsprojects/learningcsharp/learningcsharp/bin/Debug/net6.0/learningcsharp.pdb
+/Users/dpanaben/vsprojects/learningcsharp/learningcsharp/obj/Debug/net6.0/learningcsharp.csproj.AssemblyReference.cache
+/Users/dpanaben/vsprojects/learningcsharp/learningcsharp/obj/Debug/net6.0/learningcsharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dpanaben/vsprojects/learningcsharp/learningcsharp/obj/Debug/net6.0/learningcsharp.AssemblyInfoInputs.cache
+/Users/dpanaben/vsprojects/learningcsharp/learningcsharp/obj/Debug/net6.0/learningcsharp.AssemblyInfo.cs
+/Users/dpanaben/vsprojects/learningcsharp/learningcsharp/obj/Debug/net6.0/learningcsharp.csproj.CoreCompileInputs.cache
+/Users/dpanaben/vsprojects/learningcsharp/learningcsharp/obj/Debug/net6.0/learningcsharp.dll
+/Users/dpanaben/vsprojects/learningcsharp/learningcsharp/obj/Debug/net6.0/refint/learningcsharp.dll
+/Users/dpanaben/vsprojects/learningcsharp/learningcsharp/obj/Debug/net6.0/learningcsharp.pdb
+/Users/dpanaben/vsprojects/learningcsharp/learningcsharp/obj/Debug/net6.0/learningcsharp.genruntimeconfig.cache
+/Users/dpanaben/vsprojects/learningcsharp/learningcsharp/obj/Debug/net6.0/ref/learningcsharp.dll
